@@ -1,29 +1,29 @@
 namespace JsonApiExample.Data;
 
-public class Population
+public class Statistics
 {
-    public decimal Pop { get; set; }
-    public int EstimatePop { get; set; }
-    public decimal Value
+    public decimal Population { get; set; }
+    public long Gdp { get; set; }
+    public decimal PerCapita
     {
         get
         {
-            if (EstimatePop == 0)
-                return Pop;
-            return Pop / EstimatePop;
+            if (Gdp == 0)
+                return Population;
+            return Population / Gdp;
         }
     }
 
-    public Population()
+    public Statistics()
     {
-        Pop = 0M;
-        EstimatePop = 1;
+        Population = 0M;
+        Gdp = 1;
     }
 
     public override string ToString()
     {
-        if (EstimatePop > 1)
-            return string.Format("{0} / {1}", EstimatePop, Pop.ToString("F"));
-        return Pop.ToString("F");
+        if (Gdp > 1)
+            return string.Format("{0} / {1}", Gdp, Population.ToString("F"));
+        return Population.ToString("F");
     }
 }

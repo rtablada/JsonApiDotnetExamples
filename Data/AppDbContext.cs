@@ -17,9 +17,9 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Country>(entity =>
         {
             entity.ToTable("Country");
-            entity.OwnsOne(c => c.Population, p => {
-                p.Property(a => a.Pop).HasColumnName("Population");
-                p.Property(a => a.EstimatePop).HasColumnName("EstimatePop");
+            entity.OwnsOne(c => c.Statistics, p => {
+                p.Property(a => a.Population).HasColumnName("Population");
+                p.Property(a => a.Gdp).HasColumnName("EstimatePop");
             });
         });
     }

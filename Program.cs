@@ -47,10 +47,10 @@ static async Task SetupDb(IServiceProvider serviceProvider)
 
 static async Task InsertData(AppDbContext dbContext)
 {
-    var usa = new Country { Name = "United States", Population = new Population { Pop = 334702010, EstimatePop = 0 } };
-    var mexico = new Country { Name = "Mexico", Population = new Population { Pop = 129830000, EstimatePop = 0 } };
-    var uk = new Country { Name = "United Kingdon", Population = new Population { Pop = 67830000, EstimatePop = 0 } };
-    var sweeden = new Country { Name = "Sweeden", Population = new Population { Pop = 10830000, EstimatePop = 1 } };
+    var usa = new Country { Name = "United States", Statistics = new Statistics { Population = 334702010, Gdp = 21427000 } };
+    var mexico = new Country { Name = "Mexico", Statistics = new Statistics { Population = 129830000, Gdp =      1272839 } };
+    var uk = new Country { Name = "United Kingdon", Statistics = new Statistics { Population = 67830000, Gdp =   3131000 } };
+    var sweeden = new Country { Name = "Sweeden", Statistics = new Statistics { Population = 10830000, Gdp =      635000 } };
 
     var regions = new List<Region> {
         new Region() {
